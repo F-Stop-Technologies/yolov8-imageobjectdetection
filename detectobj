@@ -1,1 +1,4 @@
-yolo predict model=yolov8n.pt source="$1" imgsz=640 conf=0.42
+PICSFOLDER=$(readlink -f "$1")
+PIC=$("basename "$1")
+python3 -m http.server 6942 -d $PICSFOLDER
+yolo predict model=yolov8n.pt source="http://localhost:6942/$PIC" imgsz=640 conf=0.42
