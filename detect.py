@@ -10,7 +10,7 @@ def browseFiles():
 
 def detectObjects(file_path):
     # Load the YOLOv8 model
-    net = cv2.dnn.readNet("path/to/yolov8.weights", "path/to/yolov8.cfg")
+    net = cv2.dnn.readNet("yolov8n.pt", "ultralytics/yolo/cfg/default.yaml")
 
     # Load the input image
     image = cv2.imread(file_path)
